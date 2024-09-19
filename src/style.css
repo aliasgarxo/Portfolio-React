@@ -29,16 +29,21 @@ button:focus {
   background-image: url(./Assets/pre.svg);
   background-repeat: no-repeat;
   background-position: center;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Smooth fade-out */
+  opacity: 1;
+  visibility: visible;
 }
 
 #preloader-none {
   opacity: 0;
+  visibility: hidden; /* Hide it fully from the screen */
 }
 
 #no-scroll {
   overflow: hidden;
   height: 100vh;
 }
+
 
 /* --------- */
 /*Scrollbar   */
@@ -300,10 +305,10 @@ button:focus {
   }
 }
 
-.myAvtar {
+/* .myAvtar {
   justify-content: center !important;
   padding-top: 9em !important;
-}
+} */
 
 @media (max-width: 767px) {
   .myAvtar {
@@ -314,8 +319,17 @@ button:focus {
 
 .home-about-section {
   position: relative;
-  padding-bottom: 70px !important;
-  padding-top: 70px !important;
+  padding-bottom: 10px !important;
+  padding-top: 130px !important;
+  min-height: 100vh;
+}
+
+.home-about-description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  min-height: 100vh; /* Full viewport height */
 }
 
 .home-about-description {
@@ -328,7 +342,9 @@ button:focus {
 .home-about-body {
   padding-top: 50px;
   font-size: 1.2em !important;
-  text-align: left;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 20px;
 }
 
 .home-about-social {
@@ -530,7 +546,8 @@ button:focus {
   color: white !important;
   font-size: 2.3em !important;
   font-weight: 500 !important;
-  padding-top: 10px !important;
+  padding-top: 20px !important;
+  /* margin-top: 5cm; */
 }
 
 /* --------- */

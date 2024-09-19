@@ -9,11 +9,11 @@ function AboutCard() {
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
             Hello Everyone, I am <span className="purple">Aliasgar Husain </span>
-            from <span className="purple"> Pune, India.</span>
+            from <span className="purple"> Ottawa, Canada.</span>
             <br />
             I am currently employed as a DevOps Engineer at QuickInfra Cloud.
             <br />
-            I have completed my Bachelor's of Engineering in Computer Science at DPCOE.
+            I have completed my Bachelor's of Engineering in Computer Science at Pune University.
             <br />
             I have obtained the AWS Certified Solutions Architect- Associate certification, issued by Amazon Web Services (AWS).
             <br />
