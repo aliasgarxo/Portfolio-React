@@ -6,6 +6,11 @@ import Home2 from "./Home2";
 import Type from "./Type";
 
 function Home() {
+
+  const preventContextMenu = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -30,7 +35,7 @@ function Home() {
               </div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
+            <Col md={5} style={{ paddingBottom: 20 }} onContextMenu={preventContextMenu}>
               <img
                 src={homeLogo}
                 alt="home pic"

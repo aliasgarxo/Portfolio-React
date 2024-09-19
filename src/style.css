@@ -262,6 +262,10 @@ button:focus {
   padding-top: 30px !important;
 }
 
+.img-fluid {
+  user-select: none; /* Prevent the image from being selected */
+  pointer-events: none; /* Disable any mouse interactions (click, drag, etc.) */
+}
 
 
 .home-content {
@@ -346,6 +350,12 @@ button:focus {
   line-height: 1.6;
   margin-top: 20px;
 }
+@media (max-width: 767px) {
+  .home-about-body {
+    font-size: 1em; /* Smaller font for better readability on mobile */
+    padding-top: 20px;
+  }
+}
 
 .home-about-social {
   text-align: center !important;
@@ -418,6 +428,12 @@ button:focus {
   padding-top: 10px !important;
   padding-bottom: 8px !important ;
 }
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 20px; /* Increase padding on smaller screens */
+    padding-bottom: 20px;
+  }
+}
 .footer-copywright {
   text-align: center !important;
 }
@@ -478,6 +494,12 @@ button:focus {
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
 }
+@media (max-width: 767px) {
+  .project-card-view {
+    padding: 20px !important; /* Reduce padding on smaller screens */
+  }
+}
+
 .project-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
@@ -560,6 +582,12 @@ button:focus {
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   color: white !important;
+}
+@media (max-width: 767px) {
+  .about-section {
+    padding-top: 100px !important; /* Reduce padding for smaller screens */
+    padding-bottom: 20px !important;
+  }
 }
 
 .tech-icons {
