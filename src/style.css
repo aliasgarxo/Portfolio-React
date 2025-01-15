@@ -781,3 +781,100 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+
+/* contact form  */
+
+
+/* Contact Section */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure footer stays at the bottom */
+  min-height: 100vh; /* Full viewport height */
+  background-color: #0a0a23; /* Match home page background */
+  color: #ffffff;
+  padding: 0; /* Remove default padding */
+  margin: 0;
+  position: relative;
+}
+
+/* Contact Content */
+.contact-content {
+  flex: 1; /* Allows content to expand between header and footer */
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px; /* Add padding for spacing */
+  z-index: 1; /* Ensure content is above background */
+  position: relative;
+}
+
+/* Header */
+.contact-header {
+  margin: 0 auto; /* Center-align header */
+  padding-top: 80px; /* Add space between navbar and header */
+  padding-bottom: 20px; /* Space below the header */
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #a1a1ff; /* Match home page accent color */
+  margin-bottom: 10px;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  color: #dddddd;
+  margin-bottom: 20px;
+}
+
+/* Form Fields */
+.form-label {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #151532;
+  color: #ffffff;
+  padding: 10px;
+  margin-bottom: 15px; /* Add spacing between fields */
+}
+
+.form-control:focus {
+  border-color: #a1a1ff; /* Highlight border */
+  box-shadow: 0 0 5px rgba(161, 161, 255, 0.5);
+}
+
+/* Button */
+button {
+  background-color: #a1a1ff; /* Primary button color */
+  border: none;
+  color: #0a0a23; /* Dark text for contrast */
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #7d7dff; /* Darker shade on hover */
+}
+
+
+
+/* Particle Background */
+.particle-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Keep particles behind content */
+}
