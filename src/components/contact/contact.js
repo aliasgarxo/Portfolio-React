@@ -43,88 +43,65 @@ function Contact() {
   };
 
   return (
-    <section>
-      <Container fluid className="contact-section">
-        <Particle className="particle-background" />
-        <Container className="contact-content">
-          <Row className="contact-header">
-            <Col>
-              <h1 className="heading">Contact Me</h1>
-              <p className="subheading">
-                Have questions or want to work together? Fill out the form below!
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={8} className="mx-auto">
-              <Form onSubmit={handleSubmit} className="contact-form">
-                <Form.Group controlId="formName">
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter your name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </Form.Group>
-                <Form.Group controlId="formEmail">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter your email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </Form.Group>
-                <Form.Group controlId="formSubject">
-                  <Form.Label>Subject</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </Form.Group>
-                <Form.Group controlId="formMessage">
-                  <Form.Label>Message</Form.Label>
-                  <Form.Control
-                    as="textarea"
-                    rows={5}
-                    placeholder="Your message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </Form.Group>
-                <Button
-                  variant="primary"
-                  type="submit"
-                  className="mt-3"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Sending..." : "Submit"}
-                </Button>
-              </Form>
-              {responseMessage && (
-                <Alert
-                  variant={responseMessage.type}
-                  className="mt-3"
-                >
-                  {responseMessage.text}
-                </Alert>
-              )}
-            </Col>
-          </Row>
-        </Container>
-      </Container>
-    </section>
+    
+    <div className="contact-page">
+      <Particle className="particle-background" />
+      <div className="contact-container">
+        <div className="contact-card">
+          <div className="contact-header">Contact Me</div>
+          <form className="contact-body" onSubmit={handleSubmit}>
+            <input
+              className="contact-body__input"
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              className="contact-body__input"
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              className="contact-body__input"
+              type="text"
+              placeholder="Subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleInputChange}
+              required
+            />
+            <textarea
+              className="contact-body__textarea"
+              placeholder="Message"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              required
+            />
+            <button
+              className="contact-body__submit"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Sending..." : "Submit"}
+            </button>
+          </form>
+          {responseMessage && (
+            <div className={`contact-response contact-response--${responseMessage.type}`}>
+              {responseMessage.text}
+            </div>
+            )}
+        </div>
+      </div>
+    </div>
+  
   );
 }
 

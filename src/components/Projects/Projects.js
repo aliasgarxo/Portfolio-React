@@ -3,11 +3,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import dock3tier from "../../Assets/Projects/dock3tier.png";
-import emotion from "../../Assets/Projects/emotion.png";
 import terraarch from "../../Assets/Projects/terraarch.png";
 import jendoc from "../../Assets/Projects/jendoc.png";
 import terraansible from "../../Assets/Projects/terraansible.png";
 import jenkube from "../../Assets/Projects/jenkube.png";
+import cloudnativebb from "../../Assets/Projects/Cloud-Native-BB.png"
+import azurefunction from "../../Assets/Projects/azurefunction.png"
 
 function Projects() {
   return (
@@ -21,6 +22,26 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+        <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={cloudnativebb}
+              isBlog={false}
+              title="Cloud-Native Application Deployment on Azure Kubernetes Service"
+              description="Designed and deployed a scalable BestBuy application on Azure Kubernetes Service using microservices architecture. Leveraged Azure OpenAI (GPT-4, DALL-E) for dynamic product content and GitHub Actions for CI/CD automation. Achieved enhanced modularity, performance, and enriched user experience, showcasing expertise in cloud-native solutions and cutting-edge AI integration."
+              ghLink="https://github.com/aliasgarxo/bestbuy-cloud-native"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={azurefunction}
+              isBlog={false}
+              title="Contact Form with Azure Function and SendGrid Integration"
+              description="This project enables you to integrate a contact form into your website or application. It uses an Azure Function as the backend API to process form submissions and SendGrid to send the contact form data (name, email, subject, and message) to a specified email address."
+              ghLink="https://github.com/aliasgarxo/contact-form-func"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={jendoc}
@@ -71,16 +92,6 @@ function Projects() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={emotion}
-              isBlog={false}
-              title="AWS CodePipeline CI/CD Project"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-            />
-          </Col>
         </Row>
       </Container>
     </Container>
