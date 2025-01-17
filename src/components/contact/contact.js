@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import Particle from "../Particle";
 import { sendContactForm } from "./contactService"; // Import the service
 
