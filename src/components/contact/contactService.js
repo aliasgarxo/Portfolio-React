@@ -1,5 +1,5 @@
 export const sendContactForm = async (formData) => {
-    const apiUrl = process.env.REACT_APP_AZURE_FUNC_API;
+    const apiUrl = "https://contact.aliasgar.cloud/contact-form";
 
     if (!apiUrl) {
         console.error("Environment variable REACT_APP_AZURE_FUNC_API is not set.");
