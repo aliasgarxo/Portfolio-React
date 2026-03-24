@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Particles from "react-tsparticles";
 
 function Particle() {
@@ -52,4 +52,4 @@ function Particle() {
   );
 }
 
-export default Particle;
+export default memo(Particle);

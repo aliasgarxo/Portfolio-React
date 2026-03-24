@@ -57,8 +57,9 @@ function Home2() {
                 <a
                   href="https://github.com/aliasgarxo"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="icon-colour  home-social-icons"
+                  aria-label="Visit GitHub profile"
                 >
                   <AiFillGithub />
                 </a>
@@ -67,8 +68,9 @@ function Home2() {
                 <a
                   href="https://twitter.com/aliasgarxo"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="icon-colour  home-social-icons"
+                  aria-label="Visit Twitter profile"
                 >
                   <AiOutlineTwitter />
                 </a>
@@ -77,8 +79,9 @@ function Home2() {
                 <a
                   href="https://www.linkedin.com/in/aliasgar-husain-7a3510158/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="icon-colour  home-social-icons"
+                  aria-label="Visit LinkedIn profile"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -87,8 +90,9 @@ function Home2() {
                 <a
                   href="https://www.instagram.com/imaliasgar0"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="icon-colour home-social-icons"
+                  aria-label="Visit Instagram profile"
                 >
                   <AiFillInstagram />
                 </a>

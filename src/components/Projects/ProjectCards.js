@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
@@ -13,7 +14,12 @@ function ProjectCards(props) {
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
-        <Button variant="primary" href={props.ghLink} target="_blank">
+        <Button
+          variant="primary"
+          href={props.ghLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <BsGithub /> &nbsp;
           {props.isBlog ? "Blog" : "GitHub"}
         </Button>
@@ -27,6 +33,7 @@ function ProjectCards(props) {
             variant="primary"
             href={props.demoLink}
             target="_blank"
+            rel="noopener noreferrer"
             style={{ marginLeft: "10px" }}
           >
             <CgWebsite /> &nbsp;
@@ -37,4 +44,19 @@ function ProjectCards(props) {
     </Card>
   );
 }
+
+ProjectCards.propTypes = {
+  imgPath: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  ghLink: PropTypes.string.isRequired,
+  isBlog: PropTypes.bool,
+  demoLink: PropTypes.string,
+};
+
+ProjectCards.defaultProps = {
+  isBlog: false,
+  demoLink: null,
+};
+
 export default ProjectCards;

@@ -25,8 +25,9 @@ function Footer() {
               <a
                 href="https://github.com/aliasgarxo"
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit GitHub profile"
               >
                 <AiFillGithub />
               </a>
@@ -35,8 +36,9 @@ function Footer() {
               <a
                 href="https://twitter.com/aliasgarxo"
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit Twitter profile"
               >
                 <AiOutlineTwitter />
               </a>
@@ -45,8 +47,9 @@ function Footer() {
               <a
                 href="https://www.linkedin.com/in/aliasgar-husain-7a3510158/"
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit LinkedIn profile"
               >
                 <FaLinkedinIn />
               </a>
@@ -55,8 +58,9 @@ function Footer() {
               <a
                 href="https://www.instagram.com/imaliasgar0"
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit Instagram profile"
               >
                 <AiFillInstagram />
               </a>

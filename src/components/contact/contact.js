@@ -49,7 +49,9 @@ function Contact() {
         <div className="contact-card">
           <div className="contact-header">Contact Me</div>
           <form className="contact-body" onSubmit={handleSubmit}>
+            <label htmlFor="contact-name" className="visually-hidden">Name</label>
             <input
+              id="contact-name"
               className="contact-body__input"
               type="text"
               placeholder="Name"
@@ -57,8 +59,11 @@ function Contact() {
               value={formData.name}
               onChange={handleInputChange}
               required
+              maxLength={100}
             />
+            <label htmlFor="contact-email" className="visually-hidden">Email</label>
             <input
+              id="contact-email"
               className="contact-body__input"
               type="email"
               placeholder="Email"
@@ -66,8 +71,11 @@ function Contact() {
               value={formData.email}
               onChange={handleInputChange}
               required
+              maxLength={254}
             />
+            <label htmlFor="contact-subject" className="visually-hidden">Subject</label>
             <input
+              id="contact-subject"
               className="contact-body__input"
               type="text"
               placeholder="Subject"
@@ -75,14 +83,18 @@ function Contact() {
               value={formData.subject}
               onChange={handleInputChange}
               required
+              maxLength={200}
             />
+            <label htmlFor="contact-message" className="visually-hidden">Message</label>
             <textarea
+              id="contact-message"
               className="contact-body__textarea"
               placeholder="Message"
               name="message"
               value={formData.message}
               onChange={handleInputChange}
               required
+              maxLength={2000}
             />
             <button
               className="contact-body__submit"

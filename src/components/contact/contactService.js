@@ -1,10 +1,5 @@
 export const sendContactForm = async (formData) => {
-    const apiUrl = "https://contact.aliasgar.cloud/contact-form";
-
-    if (!apiUrl) {
-        console.error("Environment variable REACT_APP_AZURE_FUNC_API is not set.");
-        return { success: false, message: "API URL not configured." };
-    }
+    const apiUrl = process.env.REACT_APP_CONTACT_API_URL || "https://contact.aliasgar.cloud/contact-form";
 
     try {
         const response = await fetch(apiUrl, {
@@ -16,13 +11,17 @@ export const sendContactForm = async (formData) => {
         });
 
         if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || "Something went wrong");
+            const contentType = response.headers.get("content-type");
+            let errorMessage = "Something went wrong";
+            if (contentType && contentType.includes("application/json")) {
+                const errorData = await response.json();
+                errorMessage = errorData.message || errorMessage;
+            }
+            throw new Error(errorMessage);
         }
 
         return { success: true };
     } catch (error) {
-        console.error("Error during form submission:", error);
         return { success: false, message: error.message };
     }
 };
