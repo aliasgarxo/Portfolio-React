@@ -8,24 +8,46 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hello Everyone, I am <span className="purple">Aliasgar Husain </span>
-            from <span className="purple"> Ottawa, Canada.</span>
-            <br />
-            I am currently employed as a DevOps Engineer at QuickInfra Cloud.
-            <br />
-            I have completed my Bachelor's of Engineering in Computer Science at Pune University.
-            <br />
-            I have obtained the AWS Certified Solutions Architect- Associate certification, issued by Amazon Web Services (AWS).
+            Hi, I'm <span className="purple">Aliasgar Husain</span>, a Cloud &
+            DevOps Engineer based in{" "}
+            <span className="purple">Ottawa, Canada.</span>
             <br />
             <br />
-            Apart from my intrest in Cloud technology, some other activities that I love to do!
+            I recently graduated from{" "}
+            <span className="purple">Algonquin College</span>, where I deepened
+            my expertise in cloud infrastructure, DevOps automation, and
+            AI-driven solutions.
+            <br />
+            <br />
+            Previously, I worked as a <span className="purple">
+              DevOps Engineer
+            </span>{" "}
+            at QuickInfra Cloud, building and automating production
+            infrastructure on AWS and Azure.
+            <br />
+            <br />
+            I hold the{" "}
+            <span className="purple">
+              AWS Certified Solutions Architect – Associate
+            </span>{" "}
+            certification. My current focus is on building intelligent{" "}
+            <span className="purple">AI Agents</span> and integrating{" "}
+            <span className="purple">Google Gemini</span> into real-world cloud
+            applications — where infrastructure meets intelligence.
+            <br />
+            <br />
+            <span className="purple">Open to new opportunities</span> — whether
+            it's cloud engineering, DevOps, or AI-powered solutions.
+            <br />
+            <br />
+            Outside of tech, a few things I love!
           </p>
           <ul>
             <li className="about-activity">
               <VscDebugBreakpointDataUnverified /> Playing Video Games
             </li>
             <li className="about-activity">
-              <VscDebugBreakpointDataUnverified /> Reading about new Technologies
+              <VscDebugBreakpointDataUnverified /> Exploring AI & Emerging Tech
             </li>
             <li className="about-activity">
               <VscDebugBreakpointDataUnverified /> Travelling
@@ -33,7 +55,7 @@ function AboutCard() {
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
+            "Cloud is the canvas. Code is the brush. AI is the future."{" "}
           </p>
           <footer className="blockquote-footer">Aliasgar</footer>
         </blockquote>

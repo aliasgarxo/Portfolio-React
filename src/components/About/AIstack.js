@@ -1,45 +1,37 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { FaAws } from "react-icons/fa";
-import { VscAzure } from "react-icons/vsc";
+import { DiPython } from "react-icons/di";
+import { FaRobot } from "react-icons/fa";
 import {
-  SiDocker,
-  SiKubernetes,
-  SiTerraform,
-  SiAnsible,
-  SiJenkins,
-  SiPulumi,
+  SiOpenai,
+  SiGooglecloud,
+  SiTensorflow,
+  SiLangchain,
 } from "react-icons/si";
 
-function Techstack() {
+function AIstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <FaAws />
+        <SiGooglecloud />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <VscAzure />
+        <SiOpenai />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiDocker />
+        <DiPython />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiKubernetes />
+        <SiTensorflow />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiTerraform />
+        <SiLangchain />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiAnsible />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiJenkins />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPulumi />
+        <FaRobot />
       </Col>
     </Row>
   );
 }
 
-export default Techstack;
+export default AIstack;

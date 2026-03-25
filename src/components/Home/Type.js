@@ -8,7 +8,8 @@ function Type() {
         strings: [
           "DevOps Engineer",
           "AWS Solutions Architect",
-          "Cloud Specialist",
+          "AI Agent Developer",
+          "Cloud Infrastructure Engineer",
           "Open Source Contributor",
         ],
         autoStart: true,

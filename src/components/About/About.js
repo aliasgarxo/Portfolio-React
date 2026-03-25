@@ -5,6 +5,7 @@ import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.svg";
 import Toolstack from "./Toolstack";
+import AIstack from "./AIstack";
 
 function About() {
   return (
@@ -33,17 +34,22 @@ function About() {
             <img src={laptopImg} alt="about" className="img-fluid" />
           </Col>
         </Row>
-        <h1 className="project-heading">
-          Professional <strong className="purple">Skillset </strong>
-        </h1>
 
+        <h1 className="project-heading">
+          Cloud & <strong className="purple">DevOps </strong>
+        </h1>
         <Techstack />
 
         <h1 className="project-heading">
-          <strong className="purple">Tools</strong> I use
+          AI Agents &{" "}
+          <strong className="purple">Intelligence</strong>
+        </h1>
+        <AIstack />
+
+        <h1 className="project-heading">
+          <strong className="purple">Dev Tools</strong> & Monitoring
         </h1>
         <Toolstack />
-
       </Container>
     </Container>
   );

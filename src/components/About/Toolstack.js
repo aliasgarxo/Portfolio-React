@@ -1,21 +1,14 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { VscAzure } from "react-icons/vsc"; 
+import { DiGit } from "react-icons/di";
 import {
-  SiVisualstudiocode,
-  SiAnsible,
   SiLinux,
-  SiTerraform,
-  SiPulumi,
-  SiKubernetes,
-  SiDocker,
-  SiJenkins,
+  SiGnubash,
+  SiPrometheus,
+  SiGrafana,
+  SiVisualstudiocode,
+  SiMysql,
 } from "react-icons/si";
-import { FaAws } from "react-icons/fa";
-import {
-  DiPython,
-  DiGit,
-} from "react-icons/di";
 
 function Toolstack() {
   return (
@@ -24,37 +17,22 @@ function Toolstack() {
         <SiLinux />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiVisualstudiocode />
+        <SiGnubash />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <FaAws />
+        <SiPrometheus />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiTerraform />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiAnsible />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <VscAzure />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiPulumi />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiDocker />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiKubernetes />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <DiPython />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons">
-        <SiJenkins />
+        <SiGrafana />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiGit />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiVisualstudiocode />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiMysql />
       </Col>
     </Row>
   );
