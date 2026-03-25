@@ -6,7 +6,7 @@ import {
   SiOpenai,
   SiGooglecloud,
   SiTensorflow,
-  SiLangchain,
+  SiJupyter,
 } from "react-icons/si";
 
 function AIstack() {
@@ -25,7 +25,7 @@ function AIstack() {
         <SiTensorflow />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiLangchain />
+        <SiJupyter />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <FaRobot />
