@@ -15,7 +15,7 @@ export const sendContactForm = async (formData) => {
             let errorMessage = "Something went wrong";
             if (contentType && contentType.includes("application/json")) {
                 const errorData = await response.json();
-                errorMessage = errorData.message || errorMessage;
+                errorMessage = errorData.error || errorMessage;
             }
             throw new Error(errorMessage);
         }
