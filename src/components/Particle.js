@@ -1,11 +1,27 @@
-import React, { memo } from "react";
+import React from "react";
 import Particles from "react-tsparticles";
+import { useTheme } from "../context/ThemeContext";
 
 function Particle() {
+  const { theme } = useTheme();
+
+  const particleColor = theme === "light"
+    ? ["#1e1b4b", "#312e81", "#3730a3", "#4338ca"]
+    : ["#ffffff", "#e2e8f0", "#c7d2fe"];
+
+  const bgColor = theme === "light" ? "#f5f2ee" : "#0d1117";
+
   return (
     <Particles
+      key={theme}
       id="tsparticles"
       params={{
+        background: {
+          color: {
+            value: bgColor,
+          },
+          opacity: 1,
+        },
         particles: {
           number: {
             value: 160,
@@ -13,6 +29,9 @@ function Particle() {
               enable: true,
               value_area: 1500,
             },
+          },
+          color: {
+            value: particleColor,
           },
           line_linked: {
             enable: false,
@@ -23,9 +42,10 @@ function Particle() {
             speed: 0.05,
           },
           size: {
-            value: 1,
+            value: theme === "light" ? 1.8 : 1,
           },
           opacity: {
+            value: theme === "light" ? 1.0 : 0.8,
             anim: {
               enable: true,
               speed: 1,
@@ -52,4 +72,4 @@ function Particle() {
   );
 }
 
-export default memo(Particle);
+export default Particle;

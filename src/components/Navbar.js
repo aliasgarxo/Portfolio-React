@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ImBlog } from "react-icons/im";
 import {
   AiOutlineHome,
@@ -13,12 +13,31 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { BsPersonFillAdd } from "react-icons/bs";
-
 import { CgFileDocument } from "react-icons/cg";
+import { BsSun, BsMoonStarsFill } from "react-icons/bs";
+import { useTheme } from "../context/ThemeContext";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isMainPage = location.pathname === "/";
+
+  const scrollToSection = (id) => {
+    updateExpanded(false);
+    if (isMainPage) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 400);
+    }
+  };
 
   useEffect(() => {
     function scrollHandler() {
@@ -54,32 +73,22 @@ function NavBar() {
           <span></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
+          <Nav className="mx-auto d-flex align-items-center" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link onClick={() => scrollToSection("home")} style={{ cursor: "pointer" }}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
+              <Nav.Link onClick={() => scrollToSection("about")} style={{ cursor: "pointer" }}>
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
+              <Nav.Link onClick={() => scrollToSection("projects")} style={{ cursor: "pointer" }}>
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} />{" "}
                 Projects
               </Nav.Link>
             </Nav.Item>
@@ -105,15 +114,13 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/contact"
-                onClick={() => updateExpanded(false)}
-              >
+              <Nav.Link onClick={() => scrollToSection("contact")} style={{ cursor: "pointer" }}>
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Contact
               </Nav.Link>
             </Nav.Item>
+          </Nav>
 
+          <Nav className="d-flex align-items-center">
             <Nav.Item className="fork-btn">
               <Button
                 href="https://www.linkedin.com/in/aliasgar-husain-7a3510158/"
@@ -123,6 +130,21 @@ function NavBar() {
                 <FaLinkedinIn style={{ fontSize: "1.2em" }} />{" "}
                 <BsPersonFillAdd style={{ fontSize: "1.1em" }} />
               </Button>
+            </Nav.Item>
+
+            <Nav.Item>
+              <button
+                className="theme-toggle-btn"
+                onClick={toggleTheme}
+                aria-label="Toggle theme"
+                title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                {theme === "dark" ? (
+                  <BsSun style={{ fontSize: "1.15em" }} />
+                ) : (
+                  <BsMoonStarsFill style={{ fontSize: "1.05em" }} />
+                )}
+              </button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

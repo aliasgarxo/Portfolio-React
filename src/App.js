@@ -5,16 +5,14 @@ import Footer from "./components/Footer";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import { ThemeProvider } from "./context/ThemeContext";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // Lazy loading the components
-const Home = lazy(() => import("./components/Home/Home"));
-const About = lazy(() => import("./components/About/About"));
-const Projects = lazy(() => import("./components/Projects/Projects"));
+const MainPage = lazy(() => import("./components/MainPage"));
 const Resume = lazy(() => import("./components/Resume/ResumeNew"));
-const Contact = lazy(() => import("./components/contact/contact"));
 
 function App() {
   const [load, updateLoad] = useState(true);
@@ -28,6 +26,7 @@ function App() {
   }, []);
 
   return (
+    <ThemeProvider>
     <Router>
       <Preloader load={load} />
 
@@ -35,21 +34,20 @@ function App() {
         <Navbar />
         <ScrollToTop />
         <ErrorBoundary>
-          {/* Using Suspense to lazy-load components */}
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/project" element={<Projects />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/" element={<MainPage />} />
+              <Route path="/resume" element={<><Resume /><Footer /></>} />
+              <Route path="/about" element={<Navigate to="/#about" />} />
+              <Route path="/project" element={<Navigate to="/#projects" />} />
+              <Route path="/contact" element={<Navigate to="/#contact" />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </Suspense>
         </ErrorBoundary>
-        <Footer />
       </div>
     </Router>
+    </ThemeProvider>
   );
 }
 

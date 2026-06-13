@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Particle from "../Particle";
 import { sendContactForm } from "./contactService"; // Import the service
 
 function Contact() {
@@ -44,7 +43,6 @@ function Contact() {
   return (
     
     <div className="contact-page">
-      <Particle className="particle-background" />
       <div className="contact-container">
         <div className="contact-card">
           <div className="contact-header">Contact Me</div>
