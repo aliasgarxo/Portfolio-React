@@ -54,7 +54,7 @@ function Home() {
             {/* LEFT: identity / stack / status */}
             <aside className="home-tel-left">
               <div className="home-tel-block">
-                <div className="home-tel-block-label">// IDENTITY</div>
+                <div className="home-tel-block-label">{"// IDENTITY"}</div>
                 {IDENTITY.map(([k, v]) => (
                   <div key={k} className="home-tel-kv">
                     <span className="home-tel-key">{k}</span>
@@ -65,7 +65,7 @@ function Home() {
               </div>
 
               <div className="home-tel-block">
-                <div className="home-tel-block-label">// STACK</div>
+                <div className="home-tel-block-label">{"// STACK"}</div>
                 <div className="home-tel-tags">
                   {STACK.map((s) => (
                     <span key={s} className="home-tel-tag">{s}</span>
@@ -74,7 +74,7 @@ function Home() {
               </div>
 
               <div className="home-tel-block">
-                <div className="home-tel-block-label">// STATUS</div>
+                <div className="home-tel-block-label">{"// STATUS"}</div>
                 <div className="home-tel-status-item home-tel-status-active">◆ open to work</div>
                 <div className="home-tel-status-item">◇ Cloud · DevOps · AI</div>
                 <div className="home-tel-status-item">◇ Ottawa, Canada</div>
