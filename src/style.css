@@ -85,39 +85,10 @@ button:focus {
   box-shadow: none !important;
 }
 
-/* --------- */
-/*  Preloader */
-/* --------- */
 body {
   background-color: var(--color-bg-body);
   color: var(--color-text);
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999999;
-  background-color: #0c0513;
-  background-image: url(./Assets/pre.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Smooth fade-out */
-  opacity: 1;
-  visibility: visible;
-}
-
-#preloader-none {
-  opacity: 0;
-  visibility: hidden; /* Hide it fully from the screen */
-}
-
-#no-scroll {
-  overflow: hidden;
-  height: 100vh;
 }
 
 

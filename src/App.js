@@ -1,5 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from "react";
-import Preloader from "../src/components/Pre";
+import React, { Suspense, lazy } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -15,22 +14,10 @@ const MainPage = lazy(() => import("./components/MainPage"));
 const Resume = lazy(() => import("./components/Resume/ResumeNew"));
 
 function App() {
-  const [load, updateLoad] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      updateLoad(false);
-    }, 1200);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <ThemeProvider>
     <Router>
-      <Preloader load={load} />
-
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
+      <div className="App">
         <Navbar />
         <ScrollToTop />
         <ErrorBoundary>
