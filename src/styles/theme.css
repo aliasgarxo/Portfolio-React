@@ -1,0 +1,80 @@
+/* --------- */
+/* Theme Variables */
+/* --------- */
+
+html,
+html[data-theme="dark"] {
+  --section-background-color: linear-gradient(
+    rgba(13, 17, 23, 0.75),
+    rgba(17, 24, 39, 0.92)
+  );
+  --imp-text-color: #a5b4fc;
+  --color-primary: #4f46e5;
+  --color-primary-hover: #6366f1;
+  --color-bg-nav: #161b27;
+  --color-bg-body: #0d1117;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-card-bg: rgba(255, 255, 255, 0.04);
+  --color-card-border: rgba(99, 102, 241, 0.35);
+  --color-card-shadow: rgba(79, 70, 229, 0.3);
+  --color-scrollbar-track: #0d1117;
+  --color-scrollbar-thumb: #1e2a3a;
+  --color-scrollbar-thumb-hover: #2e3f55;
+  --color-input-bg: #1e2535;
+  --color-input-border: rgba(255, 255, 255, 0.15);
+  --color-contact-card-bg: rgba(22, 27, 39, 0.95);
+  --color-footer-text: #e2e8f0;
+  --color-tech-border: rgba(165, 180, 252, 0.3);
+  --color-tech-shadow: rgba(79, 70, 229, 0.15);
+  --navbar-text: #e2e8f0;
+  --toggle-bg: rgba(255,255,255,0.08);
+  --toggle-border: rgba(165,180,252,0.3);
+  --toggle-icon-color: #a5b4fc;
+  --color-grid-line: rgba(255, 255, 255, 0.03);
+}
+
+html[data-theme="light"] {
+  --section-background-color: linear-gradient(
+    rgba(245, 242, 238, 0.88),
+    rgba(237, 233, 254, 0.92)
+  );
+  --imp-text-color: #4f46e5;
+  --color-primary: #4f46e5;
+  --color-primary-hover: #6366f1;
+  --color-bg-nav: #f5f2ee99;
+  --color-bg-body: #f5f2ee;
+  --color-text: #1e293b;
+  --color-text-muted: #475569;
+  --color-card-bg: rgba(255, 255, 255, 0.85);
+  --color-card-border: rgba(79, 70, 229, 0.2);
+  --color-card-shadow: rgba(79, 70, 229, 0.15);
+  --color-scrollbar-track: #e8e4df;
+  --color-scrollbar-thumb: #c7d2fe;
+  --color-scrollbar-thumb-hover: #a5b4fc;
+  --color-input-bg: #f8fafc;
+  --color-input-border: rgba(79, 70, 229, 0.25);
+  --color-contact-card-bg: rgba(255, 255, 255, 0.97);
+  --color-footer-text: #1e293b;
+  --color-tech-border: rgba(79, 70, 229, 0.25);
+  --color-tech-shadow: rgba(79, 70, 229, 0.1);
+  --navbar-text: #1e293b;
+  --toggle-bg: rgba(79,70,229,0.08);
+  --toggle-border: rgba(79,70,229,0.25);
+  --toggle-icon-color: #4f46e5;
+  --color-grid-line: rgba(0, 0, 0, 0.045);
+}
+
+.purple {
+  color: var(--imp-text-color) !important;
+}
+
+button:focus {
+  box-shadow: none !important;
+}
+
+body {
+  background-color: var(--color-bg-body);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

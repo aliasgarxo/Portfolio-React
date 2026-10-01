@@ -1,0 +1,11 @@
+/* --------- */
+/* Global scroll */
+/* --------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+#home, #about, #projects, #contact {
+  scroll-margin-top: 70px;
+}

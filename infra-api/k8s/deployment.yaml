@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: infra-api
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: infra-api
+  template:
+    metadata:
+      labels:
+        app: infra-api
+    spec:
+      containers:
+        - name: infra-api
+          image: node:22-alpine
+          command: ["node", "/app/server.js"]
+          env:
+            - name: PROMETHEUS_URL
+              value: "http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090"
+            - name: ALLOWED_ORIGINS
+              value: "https://aliasgar.cloud"
+            - name: CACHE_TTL_SECONDS
+              value: "30"
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: app
+              mountPath: /app
+          readinessProbe:
+            httpGet: { path: /healthz, port: 8080 }
+            initialDelaySeconds: 3
+          resources:
+            requests: { cpu: 10m, memory: 32Mi }
+            limits: { cpu: 200m, memory: 128Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1000
+            capabilities: { drop: ["ALL"] }
+      volumes:
+        - name: app
+          configMap:
+            name: infra-api-src

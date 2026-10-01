@@ -1,5 +1,5 @@
 export const sendContactForm = async (formData) => {
-    const apiUrl = process.env.REACT_APP_CONTACT_API_URL || "https://contact.aliasgar.cloud/contact-form";
+    const apiUrl = import.meta.env.VITE_CONTACT_API_URL || "https://contact.aliasgar.cloud/contact-form";
 
     try {
         const response = await fetch(apiUrl, {

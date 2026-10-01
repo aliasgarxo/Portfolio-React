@@ -6,6 +6,7 @@ import Particle from "./Particle";
 const About = lazy(() => import("./About/About"));
 const Projects = lazy(() => import("./Projects/Projects"));
 const Contact = lazy(() => import("./contact/contact"));
+const InfraStats = lazy(() => import("./Infra/InfraStats"));
 
 function MainPage() {
   return (
@@ -26,6 +27,10 @@ function MainPage() {
           <Projects />
         </Suspense>
       </div>
+
+      <Suspense fallback={<div />}>
+        <InfraStats />
+      </Suspense>
 
       <div id="contact">
         <Suspense fallback={<div />}>

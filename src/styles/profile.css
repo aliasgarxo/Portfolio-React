@@ -1,0 +1,18 @@
+/* --------- */
+/* Profile Image */
+/* --------- */
+.home-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+  transition: background 0.4s ease;
+}
+
+html[data-theme="dark"] .home-img-container {
+  background: transparent;
+}
+
+html[data-theme="light"] .home-img-container {
+  background: transparent;
+}

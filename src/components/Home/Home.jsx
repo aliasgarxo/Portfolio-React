@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import profileImg from "../../Assets/home_img-Without_background.png";
+import profileImg from "../../Assets/home_img.webp";
 import { useTheme } from "../../context/ThemeContext";
 import { AiFillGithub, AiOutlineTwitter, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";

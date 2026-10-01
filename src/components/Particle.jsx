@@ -1,9 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Particles from "react-tsparticles";
 import { useTheme } from "../context/ThemeContext";
 
+// Matches the breakpoint the rest of the layout uses for phones.
+const MOBILE_QUERY = "(max-width: 768px)";
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
+function useMediaQuery(query) {
+  const [matches, setMatches] = useState(
+    () => typeof window !== "undefined" && window.matchMedia(query).matches
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia(query);
+    const onChange = (e) => setMatches(e.matches);
+    mql.addEventListener("change", onChange);
+    setMatches(mql.matches);
+    return () => mql.removeEventListener("change", onChange);
+  }, [query]);
+
+  return matches;
+}
+
 function Particle() {
   const { theme } = useTheme();
+  const isMobile = useMediaQuery(MOBILE_QUERY);
+  const prefersReducedMotion = useMediaQuery(REDUCED_MOTION_QUERY);
+
+  // Honour the OS "reduce motion" setting: render the flat background colour
+  // instead of an animation loop.
+  if (prefersReducedMotion) {
+    return (
+      <div
+        id="tsparticles"
+        aria-hidden="true"
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: -1,
+          backgroundColor: theme === "light" ? "#f5f2ee" : "#0d1117",
+        }}
+      />
+    );
+  }
 
   const particleColor = theme === "light"
     ? ["#1e1b4b", "#312e81", "#3730a3", "#4338ca"]
@@ -13,7 +52,7 @@ function Particle() {
 
   return (
     <Particles
-      key={theme}
+      key={`${theme}-${isMobile}`}
       id="tsparticles"
       params={{
         background: {
@@ -22,9 +61,13 @@ function Particle() {
           },
           opacity: 1,
         },
+        // Capping the frame rate roughly halves CPU on a 120Hz display for
+        // an animation this slow, with no visible difference.
+        fpsLimit: 30,
         particles: {
           number: {
-            value: 160,
+            // 160 particles was a measurable battery drain on phones.
+            value: isMobile ? 50 : 110,
             density: {
               enable: true,
               value_area: 1500,
